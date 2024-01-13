@@ -10,16 +10,17 @@ export const connectToDB = async () => {
     return;
   }
   try {
-    /*  await mongoose.connect(process.env.MONGO_URI, {
-      dbName: "provide",
+    await mongoose.connect(process.env.MONGODB_URI, {
+      dbName: "nextauthdb",
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    }); */
+    });
     await mongoose.connect(process.env.MONGODB_URI);
     isConnected = true;
     console.log("Connected to MongoDB");
   } catch (error) {
-    console.error(`ERROR: ${error.message}`);
-    process.exit(1);
+    console.log(error);
+    /* console.error(`ERROR: ${error.message}`); */
+    /*   process.exit(1); */
   }
 };
