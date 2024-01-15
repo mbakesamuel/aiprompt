@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
@@ -31,7 +32,7 @@ const Nav = () => {
           alt="logo"
           className="object-contain"
         />
-        <p className="logo_text">AI Prompts</p>
+        <p className="logo_text">AI Prompt App</p>
       </Link>
 
       {/*   Desktop navigation */}
@@ -40,7 +41,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
-              Create Post
+              Create Prompt
             </Link>
             <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
