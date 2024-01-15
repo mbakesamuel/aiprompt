@@ -9,7 +9,7 @@ export const connectToDB = async () => {
     console.log("mongoDB is already connected");
     return;
   }
-  try {
+  /*  try {
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: "nextauthdb",
       useNewUrlParser: true,
@@ -20,7 +20,12 @@ export const connectToDB = async () => {
     console.log("Connected to MongoDB");
   } catch (error) {
     console.log(error);
-    /* console.error(`ERROR: ${error.message}`); */
-    /*   process.exit(1); */
+  } */
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    isConnected = true;
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.log(error);
   }
 };
