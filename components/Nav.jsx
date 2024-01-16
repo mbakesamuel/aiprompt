@@ -8,6 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -32,7 +33,7 @@ const Nav = () => {
           alt="logo"
           className="object-contain"
         />
-        <p className="logo_text">AI Prompt App</p>
+        <p className="logo_text">AI Prompt Hub</p>
       </Link>
 
       {/*   Desktop navigation */}

@@ -15,7 +15,8 @@ export const GET = async (request, { params }) => {
     if (!prompt)
       return new NextResponse("prompt not found", {
         status: 404,
-      });1
+      });
+    1;
 
     return new NextResponse(JSON.stringify(prompt, { status: 200 }));
   } catch (error) {
@@ -51,15 +52,28 @@ export const PATCH = async (request, { params }) => {
   }
 };
 
-export const DELETE = async (request, { params }) => {
+/* export const DELETE = async (request, { params }) => {
   try {
     await connectToDB();
-    await Prompt.findByIdAndDelete(params.id);
+    await Prompt.findByIdAndDelete(params.id); 
 
     return new NextResponse(
       JSON.stringify("Prompt deleted successfully", { status: 200 })
     );
   } catch (error) {
     return new NextResponse("Failed to delete prompt", { status: 500 });
+  }
+}; */
+
+export const DELETE = async (request, { params }) => {
+  try {
+    await connectToDB();
+
+    // Find the prompt by ID and remove it
+    await Prompt.findByIdAndDelete(params.id);
+
+    return new Response("Prompt deleted successfully", { status: 200 });
+  } catch (error) {
+    return new Response("Error deleting prompt", { status: 500 });
   }
 };
