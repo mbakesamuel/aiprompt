@@ -10,12 +10,9 @@ const Home = () => {
         <span className="orange_gradient text-center"> AI Prompts</span>
       </h1>
 
-      <p className="desc text-center flex justify-center">
+      <p className="desc text-center">
         The AI Prompt Hub is a web app that enables users to create and share AI
-        prompts with the world. Whether it's for writing, storytelling, game
-        development, or any other application that requires AI-generated
-        content, the AI Prompt Hub provides a collaborative space for users to
-        exchange and discover an array of thought-provoking prompts.
+        prompts with the world.
       </p>
       <Feed />
     </section>
