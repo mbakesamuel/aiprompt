@@ -12,7 +12,10 @@ const Home = () => {
 
       <p className="desc text-center">
         The AI Prompt Hub is a web app that enables users to create and share AI
-        prompts with the world.
+        prompts with the rest of the world. You can create your own prompt as
+        well as view that of others. You can also search for prompts, edit your
+        own prompts etc. You can simply click on copy to copy a prompt of
+        interest. Enjoy this amazing full stack application
       </p>
       <Feed />
     </section>
