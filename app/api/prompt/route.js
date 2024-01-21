@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export const GET = async (request) => {
   try {
     await connectToDB();
-    const prompts = await Prompt.find({}).populate({
+    const prompts = await Prompt.find().populate({
       path: "creator",
       model: User,
     });
