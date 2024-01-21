@@ -36,17 +36,17 @@ const Feed = () => {
       }, 500)
     );
   };
+  const fetchPost = async () => {
+    const response = await fetch("/api/prompt");
+    const data = await response.json();
+    setAllPosts(data);
+  };
 
   useEffect(() => {
-    const fetchPost = async () => {
-      const response = await fetch("/api/prompt");
-      const data = await response.json();
-      setAllPosts(data);
-    };
     fetchPost();
   }, []);
 
-  //handle search chang function
+  //handle search change function
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
     return allPosts.filter(
