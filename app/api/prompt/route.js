@@ -3,10 +3,11 @@ import User from "@models/user";
 import Prompt from "@models/prompt";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
 export const GET = async (request) => {
   try {
     await connectToDB();
-    const prompts = await Prompt.find().populate({
+    const prompts = await Prompt.find({}).populate({
       path: "creator",
       model: User,
     });
