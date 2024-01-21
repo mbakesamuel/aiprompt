@@ -10,7 +10,7 @@ export const GET = async (request) => {
       path: "creator",
       model: User,
     });
-    return new NextResponse(JSON.stringify(prompts), { status: 200 });
+    return new NextResponse(JSON.stringify(prompts, { status: 200 }));
   } catch (error) {
     return new NextResponse("Failed to fetch all post", { status: 500 });
   }

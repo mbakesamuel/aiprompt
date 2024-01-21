@@ -13,7 +13,7 @@ export const GET = async (request, { params }) => {
     });
 
     if (!prompt)
-      return new NextResponse("prompt not found", {
+      return new NextResponse("prompt not found okay", {
         status: 404,
       });
     1;
